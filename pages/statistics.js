@@ -81,6 +81,80 @@ export default function () {
         style={
           { marginBottom: '20px' }
         } onSearch={getList} />
+              <div style={
+        { marginBottom: '20px' }
+      }>
+        <Row style={
+          { display: 'flex', justifyContent: 'space-around' }
+        }>
+          <Col style={
+            { flex: 1 }
+          } >
+            <Card>
+              <Statistic
+                title="networkHashrate"
+                value={app[0].networkStats.networkHashrate || 0}
+                valueStyle={{ color: '#3f8600' }}
+              />
+            </Card>
+          </Col>
+          <Col style={
+            { flex: 1 }
+          } >
+            <Card>
+              <Statistic
+                title="poolHashrate"
+                value={headerData.pendingBalance || 0}
+                valueStyle={{ color: '#cf1322' }}
+              />
+            </Card>
+          </Col>
+          <Col style={
+            { flex: 1 }
+          } >
+            <Card>
+              <Statistic
+                title="blockHeight"
+                value={app[0].networkStats.blockHeight || 0}
+                valueStyle={{ color: '#3f8600' }}
+              />
+            </Card>
+          </Col>
+          <Col style={
+            { flex: 1 }
+          } >
+            <Card>
+              <Statistic
+                title="difficulty"
+                value={app[0].networkStats.networkDifficulty || 0}
+                valueStyle={{ color: '#3f8600' }}
+              />
+            </Card>
+          </Col>
+          <Col style={
+            { flex: 1 }
+          } >
+            <Card>
+              <Statistic
+                title="minerReward"
+                value={headerData.lastPayment || 0}
+                valueStyle={{ color: '#cf1322' }}
+              />
+            </Card>
+          </Col>
+          <Col style={
+            { flex: 1 }
+          } >
+            <Card>
+              <Statistic
+                title="poolFee"
+                value={app[0].poolFeePercent || 0}
+                valueStyle={{ color: '#3f8600' }}
+              />
+            </Card>
+          </Col>
+        </Row>
+      </div>
       <div style={
         { marginBottom: '20px' }
       }>

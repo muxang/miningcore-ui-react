@@ -3,7 +3,7 @@ export const HeaderRight = ({ children }) => {
   const app = useSelector(state => state.app)
   return (
     app[0] ?
-      <div className="header-right">payment: <span>{app[0].paymentProcessing.payoutScheme}</span></div>
+      <div className="header-right">stratum+tcp://mining-expert.ru:7777</div>
       : null
   )
 }

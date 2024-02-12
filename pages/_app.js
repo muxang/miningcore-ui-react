@@ -8,7 +8,8 @@ import { InitStore, HeaderRight } from '@/components';
 import { Provider } from 'react-redux'
 import { useEffect } from 'react'
 const menuList = [
-  { name: 'top miners', path: '/' },
+  { name: 'poolData', path: '/' },
+  { name: 'top miners', path: '/topMiners' },
   { name: 'pool performance', path: '/poolPerformance' },
   { name: 'currentBlocks', path: '/currentBlocks' },
   { name: 'payments', path: '/payments' },

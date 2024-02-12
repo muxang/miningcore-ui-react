@@ -1,49 +1,158 @@
+import { Statistic, Card, Row, Col} from 'antd'
 import { useSelector, useDispatch } from 'react-redux';
-import { getMiners } from '@/request'
-import { useEffect, useState } from 'react'
-import { Table } from 'antd'
 export default function () {
     const app = useSelector(state => state.app)
-    const [listData, setListData] = useState([])
-    const [pageInfo, setPageInfo] = useState({
-        page: 0,
-        size: 20,
-        total: 200
-    })
-    const pageChange = (obj) => {
-        setPageInfo({
-            ...pageInfo,
-            page: obj.current - 1,
-            size: obj.pageSize
-        })
-    }
-    const pagination = {
-        showQuickJumper: true,
-        total: pageInfo.total
-    }
-    useEffect(() => {
-        getMiners({ id: app[0].id, page: pageInfo.page, pageSize: pageInfo.size }).then(res => {
-            setListData(res)
-        })
-    }, [pageInfo])
-    const columns = [
-        {
-            title: 'miner',
-            dataIndex: 'miner',
-            key: 'miner',
-        },
-        {
-            title: 'hashrate',
-            dataIndex: 'hashrate',
-            key: 'hashrate',
-        },
-        {
-            title: 'sharesPerSecond',
-            dataIndex: 'sharesPerSecond',
-            key: 'sharesPerSecond',
-        }
-    ]
-    return (
-        <Table rowKey="miner" dataSource={listData} columns={columns} onChange={pageChange} pagination={pagination} />
-    )
+  return (
+    <>
+
+      <div style={
+        { marginBottom: '20px' }
+      }>
+        <Row style={
+          { display: 'flex', justifyContent: 'space-around' }
+        }>
+          <Col style={
+            { flex: 1 }
+          } >
+            <Card>
+              <Statistic
+                title="connectedMiners"
+                value={app[0].poolStats.connectedMiners || 0}
+                valueStyle={{ color: '#3f8600' }}
+              />
+            </Card>
+          </Col>
+          <Col style={
+            { flex: 1 }
+          } >
+            <Card>
+              <Statistic
+                title="poolHashrate"
+                value={app[0].poolStats.poolHashrate || 0}
+                valueStyle={{ color: '#cf1322' }}
+              />
+            </Card>
+          </Col>
+          <Col style={
+            { flex: 1 }
+          } >
+            <Card>
+              <Statistic
+                title="poolFeePercent"
+                value={app[0].poolFeePercent || 0}
+                valueStyle={{ color: '#3f8600' }}
+              />
+            </Card>
+          </Col>
+          <Col style={
+            { flex: 1 }
+          } >
+            <Card>
+              <Statistic
+                title="totalPaid"
+                value={app[0].totalPaid || 0}
+                valueStyle={{ color: '#3f8600' }}
+              />
+            </Card>
+          </Col>
+          <Col style={
+            { flex: 1 }
+          } >
+            <Card>
+              <Statistic
+                title="totalBlocks"
+                value={app[0].totalBlocks || 0}
+                valueStyle={{ color: '#cf1322' }}
+              />
+            </Card>
+          </Col>
+          <Col style={
+            { flex: 1 }
+          } >
+            <Card>
+              <Statistic
+                title="poolEffort"
+                value={app[0].poolEffort || 0}
+                valueStyle={{ color: '#3f8600' }}
+              />
+            </Card>
+          </Col>
+          </Row>
+          <Row style={
+          { display: 'flex', justifyContent: 'space-around' }
+        }>
+          <Col style={
+            { flex: 1 }
+          } >
+            <Card>
+              <Statistic
+                title="networkHashrate"
+                value={app[0].networkStats.networkHashrate || 0}
+                valueStyle={{ color: '#3f8600' }}
+              />
+            </Card>
+          </Col>
+          <Col style={
+            { flex: 1 }
+          } >
+            <Card>
+              <Statistic
+                title="networkDifficulty"
+                value={app[0].networkStats.networkDifficulty || 0}
+                valueStyle={{ color: '#3f8600' }}
+              />
+            </Card>
+          </Col>
+          </Row>
+          <Row style={
+          { display: 'flex', justifyContent: 'space-around' }
+        }>
+          <Col style={
+            { flex: 1 }
+          } >
+            <Card>
+              <Statistic
+                title="minimumPayment"
+                value={app[0].paymentProcessing.minimumPayment || 0}
+                valueStyle={{ color: '#3f8600' }}
+              />
+            </Card>
+          </Col>
+          <Col style={
+            { flex: 1 }
+          } >
+            <Card>
+              <Statistic
+                title="payoutScheme"
+                value={app[0].paymentProcessing.payoutScheme || 0}
+                valueStyle={{ color: '#3f8600' }}
+              />
+            </Card>
+          </Col>
+          <Col style={
+            { flex: 1 }
+          } >
+            <Card>
+              <Statistic
+                title="coin"
+                value={app[0].coin.name || 0}
+                valueStyle={{ color: '#3f8600' }}
+              />
+            </Card>
+          </Col>
+          <Col style={
+            { flex: 1 }
+          } >
+            <Card>
+              <Statistic
+                title="algorithm"
+                value={app[0].coin.algorithm || 0}
+                valueStyle={{ color: '#3f8600' }}
+              />
+            </Card>
+          </Col>
+        </Row>
+      </div>
+    </>
+  )
 }
