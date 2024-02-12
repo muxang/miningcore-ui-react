@@ -4,7 +4,6 @@ export default function () {
     const app = useSelector(state => state.app)
   return (
     <>
-
       <div style={
         { marginBottom: '20px' }
       }>

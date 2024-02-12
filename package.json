@@ -6,7 +6,8 @@
     "build": "next build",
     "proxy": "node server",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export"
   },
   "dependencies": {
     "@headlessui/react": "^1.4.2",
