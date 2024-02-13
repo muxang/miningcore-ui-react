@@ -53,7 +53,7 @@ export default function () {
             <Card>
               <Statistic
                 title="poolHashrate"
-                value={_formatter(app[0].poolStats.poolHashrate || 0, 5, 'H/s')}
+                value={_formatter(app[0].poolStats.poolHashrate || 0, 2, 'H/s')}
                 valueStyle={{ color: '#cf1322' }}
               />
             </Card>
@@ -112,7 +112,7 @@ export default function () {
             <Card>
               <Statistic
                 title="networkHashrate"
-                value={app[0].networkStats.networkHashrate || 0}
+                value={_formatter(app[0].networkStats.networkHashrate || 0, 2, 'H/s')}
                 valueStyle={{ color: '#3f8600' }}
               />
             </Card>
@@ -123,7 +123,7 @@ export default function () {
             <Card>
               <Statistic
                 title="networkDifficulty"
-                value={app[0].networkStats.networkDifficulty || 0}
+                value={_formatter(app[0].networkStats.networkDifficulty || 0, 2, 'H/s')}
                 valueStyle={{ color: '#3f8600' }}
               />
             </Card>
