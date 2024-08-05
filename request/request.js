@@ -1,5 +1,5 @@
 import axios from 'axios'
-const BASE_URL = 'http://185.163.119.18:5000/api/pools'// 生产
+const BASE_URL = 'http://doge.solopool.us/api/pools'// 生产
 // const BASE_URL = 'http://13.212.95.157:4000/api/pools'// 测试
 const service = axios.create({
   baseURL: BASE_URL, // url = base url + request url
@@ -16,6 +16,8 @@ service.interceptors.request.use(
     return Promise.reject(error)
   }
 )
+const BASE_URL = () => <BASE_URL />
+  
 // eslint-disable-next-line import/no-anonymous-default-export
 export default (data = {}, { url, method }, showErrMsg = true) => {
   return new Promise((resolve, reject) => {
