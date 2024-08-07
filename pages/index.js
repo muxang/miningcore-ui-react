@@ -41,7 +41,7 @@ export default function () {
           } >
             <Card>
               <Statistic
-                title="connectedMiners"
+                title="Miners Online"
                 value={app[0].poolStats.connectedMiners || 0}
                 valueStyle={{ color: '#3f8600' }}
               />
@@ -52,18 +52,22 @@ export default function () {
           } >
             <Card>
               <Statistic
-                title="poolHashrate"
+                title="Pool Hashrate"
                 value={_formatter(app[0].poolStats.poolHashrate || 0, 2, 'H/s')}
                 valueStyle={{ color: '#cf1322' }}
               />
             </Card>
           </Col>
+       </Row> 
+      <Row style={
+          { display: 'flex', justifyContent: 'space-around' }
+        }>
           <Col style={
             { flex: 1 }
           } >
             <Card>
               <Statistic
-                title="poolFeePercent"
+                title="Pool Fee"
                 value={app[0].poolFeePercent || 0}
                 valueStyle={{ color: '#3f8600' }}
               />
@@ -74,18 +78,22 @@ export default function () {
           } >
             <Card>
               <Statistic
-                title="totalPaid"
+                title="Total Paid"
                 value={app[0].totalPaid || 0}
                 valueStyle={{ color: '#3f8600' }}
               />
             </Card>
           </Col>
+       </Row>
+                <Row style={
+          { display: 'flex', justifyContent: 'space-around' }
+        }>
           <Col style={
             { flex: 1 }
           } >
             <Card>
               <Statistic
-                title="totalBlocks"
+                title="Pool Blocks"
                 value={app[0].totalBlocks || 0}
                 valueStyle={{ color: '#cf1322' }}
               />
@@ -96,7 +104,7 @@ export default function () {
           } >
             <Card>
               <Statistic
-                title="poolEffort"
+                title="Current Effort"
                 value={app[0].poolEffort || 0}
                 valueStyle={{ color: '#3f8600' }}
               />
