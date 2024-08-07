@@ -58,10 +58,6 @@ export default function () {
               />
             </Card>
           </Col>
-       </Row> 
-      <Row style={
-          { display: 'flex', justifyContent: 'space-around' }
-        }>
           <Col style={
             { flex: 1 }
           } >
@@ -119,7 +115,7 @@ export default function () {
           } >
             <Card>
               <Statistic
-                title="networkHashrate"
+                title="Network Hashrate"
                 value={_formatter(app[0].networkStats.networkHashrate || 0, 2, 'H/s')}
                 valueStyle={{ color: '#3f8600' }}
               />
@@ -130,7 +126,7 @@ export default function () {
           } >
             <Card>
               <Statistic
-                title="networkDifficulty"
+                title="Network Difficulty"
                 value={_formatter(app[0].networkStats.networkDifficulty || 0, 2, 'H/s')}
                 valueStyle={{ color: '#3f8600' }}
               />
@@ -145,7 +141,7 @@ export default function () {
           } >
             <Card>
               <Statistic
-                title="minimumPayment"
+                title="Minimum Payment"
                 value={app[0].paymentProcessing.minimumPayment || 0}
                 valueStyle={{ color: '#3f8600' }}
               />
@@ -156,7 +152,7 @@ export default function () {
           } >
             <Card>
               <Statistic
-                title="payoutScheme"
+                title="Payout Scheme"
                 value={app[0].paymentProcessing.payoutScheme || 0}
                 valueStyle={{ color: '#3f8600' }}
               />
@@ -167,7 +163,7 @@ export default function () {
           } >
             <Card>
               <Statistic
-                title="coin"
+                title="Coin"
                 value={app[0].coin.name || 0}
                 valueStyle={{ color: '#3f8600' }}
               />
@@ -178,7 +174,7 @@ export default function () {
           } >
             <Card>
               <Statistic
-                title="algorithm"
+                title="Algorithm"
                 value={app[0].coin.algorithm || 0}
                 valueStyle={{ color: '#3f8600' }}
               />
