@@ -58,6 +58,10 @@ export default function () {
               />
             </Card>
           </Col>
+                </Row>
+                <Row style={
+          { display: 'flex', justifyContent: 'space-around' }
+        }>
           <Col style={
             { flex: 1 }
           } >
