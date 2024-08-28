@@ -1,5 +1,5 @@
 import axios from 'axios'
-const BASE_URL = 'http://doge.solopool.us/api/pools'// 生产
+const BASE_URL = 'https://doge.solopool.us/api/pools'// 生产
 // const BASE_URL = 'http://13.212.95.157:4000/api/pools'// 测试
 const service = axios.create({
   baseURL: BASE_URL, // url = base url + request url
