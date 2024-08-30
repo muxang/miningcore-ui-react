@@ -16,7 +16,7 @@ service.interceptors.request.use(
     return Promise.reject(error)
   }
 )
-BASE_URL = () => <BASE_URL />
+// BASE_URL = () => <BASE_URL />
   
 // eslint-disable-next-line import/no-anonymous-default-export
 export default (data = {}, { url, method }, showErrMsg = true) => {
