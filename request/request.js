@@ -1,6 +1,6 @@
 import axios from 'axios'
-const BASE_URL = 'https://doge.solopool.us/api/pools'// 生产
-// const BASE_URL = 'http://13.212.95.157:4000/api/pools'// 测试
+// const BASE_URL = 'https://doge.solopool.us/api/pools'// 生产
+const BASE_URL = 'http://44.204.165.254:4000/api/pools'// 测试
 const service = axios.create({
   baseURL: BASE_URL, // url = base url + request url
   // withCredentials: true, // send cookies when cross-domain requests
@@ -16,7 +16,7 @@ service.interceptors.request.use(
     return Promise.reject(error)
   }
 )
-const BASE_URL = () => <BASE_URL />
+BASE_URL = () => <BASE_URL />
   
 // eslint-disable-next-line import/no-anonymous-default-export
 export default (data = {}, { url, method }, showErrMsg = true) => {
